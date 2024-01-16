@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>editar</title>
+</head>
+<body>
+    form method="post" action="http://localhost:8080"> 
+        <header> 
+            <h1 class="titulo"> Formulário de submissão de jogos</h1>
+        </header>
+        <div>
+            <label>Nome do jogo:</label>
+            <input name="nome" type="text" /><br /><br />
+        </div>
+
+        <div>
+            <label>Data de lançamento:</label>
+            <input name="data" type="date" /><br /><br />
+        </div>
+
+        <div>
+            <label>Preço R$:</label>
+            <input name="preco" type="number" step="any" /><br /><br />
+        </div>
+
+        <div>
+            <label>Descrição do jogo:</label>
+            <input name="descricao" type="text" /><br /><br />
+        </div>
+
+        <div>
+            <label>Email de contato:</label>
+            <input name="email" type="email" /><br /><br />
+        </div>
+
+        <div>
+            <label>Número de fases:</label>
+            <input name="fases" type="number" /><br /><br />
+        </div>
+
+        <div>
+            <label>Multiplayer:</label>
+            <input name="multiplayer" type="checkbox" /><br /><br />
+        </div>
+
+        <div>
+            <label>Categoria:</label>
+            <input name="categoria" type="text" /><br /><br />
+        </div>
+
+        <div>
+            <label>Imagem prévia (opcional):</label>
+            <input name="imagem" type="file" /><br /><br />
+        </div>
+        <button onclick="window.location = 'lista.html' " type="submit" class="enviar">Voltar</button>
+        <button class="enviar" type="submit">Salvar</button> 
+
+</body>
+</html>
