@@ -1,64 +1,6 @@
 <?php 
 include "template.php";
-?>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        a {
-            text-decoration: none;
-            color: #3498db;
-        }
-        .dark-theme th {
-            background-color: #000;
-        }
-        .dark-theme tr:nth-child(even) {
-            background-color: #666;
-        }
-
-        button.btn {
-            background-color: #4caf50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        button.btn:hover {
-            background-color: #45a049;
-        }
-    </style>
-    <?php 
     $sql = "SELECT * FROM games";
     $result = $conn->query($sql);
     ?>
@@ -67,7 +9,7 @@ include "template.php";
         <h1 class="titulo">Lista de Envios</h1>
     </header>
 
-    <table>
+    <table class="table table-bordered table-striped">
         <tr>
             <th>Nome</th>
             <th>Data</th>
@@ -101,7 +43,7 @@ include "template.php";
     </table>
     
     <hr/>
-    <button onclick= "window.location = 'formulario.php?acao=i'" type="button" class="btn">Incluir Jogos</button>
+    <button onclick= "window.location = 'formulario.php?acao=i'" type="button" class="btn btn-success">Incluir Jogos</button>
     <?php
     include("footer.php");
 ?> 

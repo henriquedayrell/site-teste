@@ -1,6 +1,6 @@
-<?php 
+<?php
 include "template.php";
-if ($_GET["acao"]=="i") {
+if ($_GET["acao"] == "i") {
     $id          = '';
     $nome        = '';
     $data        = '';
@@ -14,7 +14,7 @@ if ($_GET["acao"]=="i") {
     $mensagem_botao = "Confirmar";
 
     $pagina_acao = "incluir";
-} else if($_GET["acao"]=="e"){
+} else if ($_GET["acao"] == "e") {
     $id = $_GET["id"];
     $sql = "select * from games where id = ?";
     $stmt = $conn->prepare($sql);
@@ -28,15 +28,14 @@ if ($_GET["acao"]=="i") {
     $data = $dados->data;
     $preco = $dados->preco;
     $descricao = $dados->descricao;
-    $email = $dados-> email;
+    $email = $dados->email;
     $fases = $dados->fases;
     $multiplayer = $dados->multiplayer;
     $categoria = $dados->categoria;
     $imagem = $dados->imagem;
     $mensagem_botao = "Editar";
     $pagina_acao = "editar";
-
-} else if ($_GET["acao"]=="d") {
+} else if ($_GET["acao"] == "d") {
     $id = $_GET["id"];
     $sql = "select * from games where id = ?";
     $stmt = $conn->prepare($sql);
@@ -50,83 +49,80 @@ if ($_GET["acao"]=="i") {
     $data = $dados->data;
     $preco = $dados->preco;
     $descricao = $dados->descricao;
-    $email = $dados-> email;
+    $email = $dados->email;
     $fases = $dados->fases;
     $multiplayer = $dados->multiplayer;
     $categoria = $dados->categoria;
     $imagem = $dados->imagem;
 
-$mensagem_botao = "Deletar";
-    $pagina_acao = "deletar"; 
+    $mensagem_botao = "Deletar";
+    $pagina_acao = "deletar";
 }
-?>    
-<form method="post" action="/games/php/<?php echo $pagina_acao; ?>.php<?php echo "?id=" . $id ?>" enctype="multipart/form-data"> 
-        <header> 
-            <h1 class="titulo"> Formulário de submissão de jogos</h1>
-        </header>
-        <div>
-            <label>Nome do jogo:</label>
-            <input name="nome" type="text" value="<?php echo $nome; ?>"/><br /><br />
-        </div>
+?>
+<form method="post" action="/games/php/<?php echo $pagina_acao; ?>.php<?php echo "?id=" . $id ?>" enctype="multipart/form-data">
+    <header>
+        <h1 class="titulo"> Formulário de submissão de jogos</h1>
+    </header>
+    <div>
+        <label>Nome do jogo:</label>
+        <input  class="form-control" name="nome" type="text" value="<?php echo $nome; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Data de lançamento:</label>
-            <input name="data" type="date" value = "<?php echo $data; ?>" /><br /><br />
-        </div>
+    <div>
+        <label>Data de lançamento:</label>
+        <input  class="form-control" name="data" type="date" value="<?php echo $data; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Preço R$:</label>
-            <input name="preco" type="number" step="any" value = "<?php echo $preco; ?>" /><br /><br />
-        </div>
+    <div>
+        <label>Preço R$:</label>
+        <input class="form-control" name="preco" type="number" step="any" value="<?php echo $preco; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Descrição do jogo:</label>
-            <input name="descricao" type="text" value = "<?php echo $descricao; ?>"/><br /><br />
-        </div>
+    <div>
+        <label>Descrição do jogo:</label>
+        <input class="form-control" name="descricao" type="text" value="<?php echo $descricao; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Email de contato:</label>
-            <input name="email" type="email" value = "<?php echo $email; ?>"/><br /><br />
-        </div>
+    <div>
+        <label>Email de contato:</label>
+        <input class="form-control" name="email" type="email" value="<?php echo $email; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Número de fases:</label>
-            <input name="fases" type="number" value = "<?php echo $fases; ?>"/><br /><br />
-        </div>
+    <div>
+        <label>Número de fases:</label>
+        <input  class="form-control" name="fases" type="number" value="<?php echo $fases; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Multiplayer:</label>
-            <input name="multiplayer" type="checkbox" value = "<?php echo $multiplayer; ?>"/><br /><br />
-        </div>
+    <div>
+        <label>Multiplayer:</label>
+        <input name="multiplayer" type="checkbox" value="<?php echo $multiplayer; ?>" /><br /><br />
+    </div>
 
-        <div>
-            <label>Categoria:</label> 
-            <select name="categoria" id="categoria">
-                <option <?php if ($categoria == 'Lt') echo 'selected'; ?> value="Lt">Luta</option>
-                <option <?php if ($categoria == 'Es') echo 'selected'; ?> value="Es">Esportes</option>
-                <option <?php if ($categoria == 'Av') echo 'selected'; ?> value="Av">Aventura</option>
-                <option <?php if ($categoria == 'Tr') echo 'selected'; ?> value="Tr">Tiro</option>
-                <option <?php if ($categoria == 'Co') echo 'selected'; ?> value="Co">Corrida</option>
-            </select>
-        </div>
-
-        <div>
-            <label>Imagem prévia (opcional):</label>
-            <input name="imagem" type="file" /><br /><br />
-        </div>
-        
-        <br>
-        <button onclick="window.location = 'lista.php' " type="button" class="enviar">Voltar</button>
-        <button class="enviar" type="submit"><?php echo $mensagem_botao;?></button>
-    </form>
-<?php if(!empty($imagem)){
-?> 
-imagem:
-<img src="<?php echo 'uploads/'.$imagem?>" alt="">
+    <div>
+        <label>Categoria:</label>
+        <select class="form-control" name="categoria" id="categoria">
+            <option <?php if ($categoria == 'Lt') echo 'selected'; ?> value="Lt">Luta</option>
+            <option <?php if ($categoria == 'Es') echo 'selected'; ?> value="Es">Esportes</option>
+            <option <?php if ($categoria == 'Av') echo 'selected'; ?> value="Av">Aventura</option>
+            <option <?php if ($categoria == 'Tr') echo 'selected'; ?> value="Tr">Tiro</option>
+            <option <?php if ($categoria == 'Co') echo 'selected'; ?> value="Co">Corrida</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="formFile" class="form-label">imagem prévia</label>
+        <input class="form-control" name="imagem" class="form-control" type="file" id="formFile">
+    </div>
+    <br>
+    <button onclick="window.location = 'lista.php' " type="button" class="enviar btn btn-secondary text-white">Voltar</button>
+    <button class="enviar btn btn-success text-white" type="submit"><?php echo $mensagem_botao; ?></button>
+</form>
+<?php if (!empty($imagem)) {
+?>
+    imagem:
+    <img src="<?php echo 'uploads/' . $imagem ?>" alt="">
 <?php
-} else{
+} else {
     echo 'nao tem imagem';
 }
 include("footer.php");
-?> 
-   
+?>

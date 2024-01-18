@@ -25,11 +25,15 @@ function setTheme(theme) {
     if (theme == 'dark') {
         body.classList.add("dark-theme")
         body.classList.remove("light-theme")
-        document.querySelector('.btn-theme').textContent = "Light theme";
+    //     document.querySelector('.btn-theme').textContent = "Light theme";
+    //     document.querySelector('.btn-theme').classList.remove("btn-dark")
+    //     document.querySelector('.btn-theme').classList.add("btn-light")
     } else {
-        document.querySelector('.btn-theme').textContent = "Dark theme";
+    //     document.querySelector('.btn-theme').textContent = "Dark theme";
         body.classList.add("light-theme")
         body.classList.remove("dark-theme")
+        // document.querySelector('.btn-theme').classList.remove("btn-light")
+        // document.querySelector('.btn-theme').classList.add("btn-dark")
     }
 }
 

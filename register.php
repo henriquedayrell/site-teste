@@ -12,7 +12,7 @@ include "countries.php";
   <!-- cria os inputs para registrar novos usuarios  -->
   <body><div class="container">
     <h1> Registrar </h1>
-  <form action="/games/php/incluirusuarios.php" method="post">
+  <form  action="/games/php/incluirusuarios.php" method="post">
   <div class="mb-3">
     <label for="" class="form-label">Nome</label>
     <input required name="nome" type="text" class="form-control" id="">
