@@ -1,5 +1,5 @@
 <?php 
-
+// contecta todos as files que o-incluem ao banco de dados 
     $servername = "localhost";
     $username = "root";
     $password = "";

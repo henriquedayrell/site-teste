@@ -20,7 +20,7 @@ else {
     if ($senhabanco == $senhausuario){
         session_start();
         $_SESSION["usuarioautenticado"]=true;
-        header("location: /games/lista.php");
+        header("location: /games/captcha/registrationform.php");
 
     }
     else die ("Senha Inválida");
