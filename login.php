@@ -22,7 +22,7 @@
     <input required name="senha" type="password" class="form-control" id="exampleInputPassword1">
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
-  <p>Não possui uma conta? <a href="register.php" class="btn btn-link">Registrar </a></p>
+  <p>Não possui uma conta? <a href="captcha/registrationform.php" class="btn btn-link">Registrar </a></p>
 </form> </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>

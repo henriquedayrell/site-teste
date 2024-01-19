@@ -11,7 +11,7 @@ $correctCaptcha = $_SESSION['captcha_code'];
 if ($userCaptcha === $correctCaptcha) {
     // Captcha verification successful, proceed with registration
     // Your registration logic goes here
-    header("location: ../lista.php");
+    header("location: ../register.php");
 } else {
     // Captcha verification failed, show an error
     echo "Captcha falhou, tente novamente.";

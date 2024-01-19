@@ -59,6 +59,9 @@ if ($_GET["acao"] == "i") {
     $pagina_acao = "deletar";
 }
 ?>
+<div class="container">
+<div class="row">
+    <div class="col"> 
 <form method="post" action="/games/php/<?php echo $pagina_acao; ?>.php<?php echo "?id=" . $id ?>" enctype="multipart/form-data">
     <header>
         <h1 class="titulo"> Formulário de submissão de jogos</h1>
@@ -113,9 +116,11 @@ if ($_GET["acao"] == "i") {
         <input class="form-control" name="imagem" class="form-control" type="file" id="formFile">
     </div>
     <br>
-    <button onclick="window.location = 'lista.php' " type="button" class="enviar btn btn-secondary text-white">Voltar</button>
     <button class="enviar btn btn-success text-white" type="submit"><?php echo $mensagem_botao; ?></button>
 </form>
+</div>
+</div>
+</div>
 <?php if (!empty($imagem)) {
 ?>
     imagem:
